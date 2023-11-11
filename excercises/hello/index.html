@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello JavaScript!</title>
+</head>
+<style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+    button {text-align: center;}
+    .button {
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button1 {border-radius: 2px;}
+    .button2 {border-radius: 4px;}
+    .button3 {border-radius: 8px;}
+    .button4 {border-radius: 12px;}
+    .button5 {border-radius: 50%;}
+</style>
+
+<body>
+    <p>
+        <button class="button button3" onclick="showName(_name)">Click me!</button>
+    </p>
+    <script type="text/javascript">
+        function getName (name) {
+            this.name = name;
+        }
+        function showName(name) {
+            // this.name = name;
+            getName.call(this, name)
+            const text = `${name}, чи ти памʼятаєш мій секрет?`+ " "+"\u2764";
+            return alert(text);
+        }
+
+        let _name = "Зірочка";
+        // document.write(showName(_name));
+    </script>
+</body>
+</html>
